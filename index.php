@@ -1,7 +1,5 @@
 <?php
-$menuItems = [
-        'a', 'b', 'c'
-];
+
 ?>
 
 <!DOCTYPE html>

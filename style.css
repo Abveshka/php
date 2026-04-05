@@ -7,4 +7,19 @@ body {
 
 .menu {
     color: red;
+    font-size: 20px;
+}
+
+.menu2 {
+    color: blue;
+    display: flex;   /* делает меню горизонтальным */
+    gap: 20px;       /* расстояние между пунктами */
+}
+
+.submenu a {
+    display: none;
+}
+
+.menuitems:hover .submenu a{
+    display: block;
 }
