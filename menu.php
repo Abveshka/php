@@ -1,54 +1,26 @@
 <?php
-$menuItems = [
-        'a', 'b', 'c', 'd'
+$menu = [
+        'д' => "d",
+        'ф' => "f",
+        'г' => "g",
+        'х' => "h",
+        'р' => "r",
 ];
 
-$menuItems3 = [
-        "News" => ["hobby", "photography"],
-        "About" => ["about", "nothing"],
-        "Contact" => ["contact", "notcontact"],
-        "Ayes" => "baby",
-];
-
-$menu2 = '
-<nav class="menu2">
-    <div><a><span>Главная</span></a></div>
-    <div class="menuitems">
-        <a><span>Новости</span></a>
-        <div class="submenu">
-            <a>Новости о спорте</a>
-            <a>Новости о работе</a>
-            <a>Новости о семье</a>
-        </div>
-    </div>
-    <div><a><span>Контакты</span></a></div>
-</nav>';
+function translat_rus_to_eng($menu, $word){
+    $str='';
+    $len = mb_strlen($word, 'UTF-8');
+    for ($i=0;$i<$len;$i++){
+        $char = mb_substr($word, $i, 1, 'UTF-8');
+        if (isset($menu[$char])) {
+            $str .= $menu[$char];
+        } else {
+            $str .= $char;
+        }
+    }
+    return $str;
+}
+echo translat_rus_to_eng($menu, "дфгхр_abs_абс");
 ?>
 
-<div class="menu">
-    <?php foreach ($menuItems as $item): ?>
-        <span><?= htmlspecialchars($item) ?></span>
-    <?php endforeach; ?>
-</div>
-    <h2>Второе меню (статическое)</h2>
-        <?= $menu2 ?>
-    <h2>Третье меню (циклом)</h2>
-<div class="menu3">
 
-    <?php foreach ($menuItems3 as $item => $keys):?>
-    <div class="menuitems3">
-        <span><?= htmlspecialchars($item) ?></span>
-        <?php if (is_array($keys)): ?>
-        <div class="submenu3">
-            <?php foreach ($keys as $itemsmall):?>
-                <a><?= htmlspecialchars($itemsmall) ?></a>
-            <?php endforeach; ?>
-        </div>
-        <?php else: ?>
-            <div class="subsubmenu3">
-            <a><?= htmlspecialchars($keys) ?></a>
-            </div>
-        <?php endif; ?>
-    </div>
-    <?php endforeach; ?>
-</div>
