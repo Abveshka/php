@@ -13,22 +13,14 @@
 <nav>
     <?php include 'menu.php'; ?>
 </nav>
-
-<table>
-    <thead>
-        <tr>Таблица умножения</tr>
-    </thead>
-    <tbody>
-    <?php for ($i = 1; $i <= 10; $i++): ?>
-    <tr>
-        <?php for($j = 1; $j <= 10; $j++): ?>
-        <td>
-            <?= $i*$j ?>
-        </td>
-        <?php endfor; ?>
-    </tr>
-    <?php endfor; ?>
-    </tbody>
-</table>
+<div class="gallery">
+    <?php foreach ($photos as $photo): ?>
+        <div>
+            <img src="photo/<?= htmlspecialchars($photo) ?>"
+                 alt="<?= htmlspecialchars($photo) ?>">
+            <p><?= htmlspecialchars($photo) ?></p>
+        </div>
+    <?php endforeach; ?>
+</div>
 </body>
 </html>
