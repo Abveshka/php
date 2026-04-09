@@ -2,41 +2,20 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background: #f4f4f4;
+    background: whitesmoke;
 }
 
-.menu {
-    color: red;
-    font-size: 20px;
-}
-
-.menu2 {
-    color: blue;
-    display: flex;   /* делает меню горизонтальным */
-    gap: 20px;       /* расстояние между пунктами */
-}
-
-.menu3 {
-    color: purple;
+.gallery {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
-.submenu a {
-    display: none;
-}
 
-.menuitems:hover .submenu a{
-    display: block;
-}
-.submenu3 {
-    min-width: max-content;
-}
-
-.submenu3 a {
-    display: none;
-}
-
-.menuitems3:hover .submenu3 a{
-    display: block;
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }

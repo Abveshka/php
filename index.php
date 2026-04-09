@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Мой сайт</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?= dirname($_SERVER['SCRIPT_NAME']) ?>/style.css">
 </head>
 <body>
 <nav>
@@ -15,8 +15,8 @@
 </nav>
 <div class="gallery">
     <?php foreach ($photos as $photo): ?>
-        <div>
-            <img src="photo/<?= htmlspecialchars($photo) ?>"
+        <div class="item">
+            <img src="<?= htmlspecialchars($photo) ?>"
                  alt="<?= htmlspecialchars($photo) ?>">
             <p><?= htmlspecialchars($photo) ?></p>
         </div>

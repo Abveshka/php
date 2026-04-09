@@ -1,7 +1,5 @@
 <?php
-$photos = [
-    'cat1.jpg','cat2.jpg','cat3.jpg'
-];
+$photos = glob('photo/*.{jpg,jpeg,png,gif,webp}',GLOB_BRACE);
 ?>
 
 
