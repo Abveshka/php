@@ -16,10 +16,27 @@ body {
     gap: 20px;       /* расстояние между пунктами */
 }
 
+.menu3 {
+    color: purple;
+    display: flex;
+    gap: 20px;
+}
+
 .submenu a {
     display: none;
 }
 
 .menuitems:hover .submenu a{
+    display: block;
+}
+.submenu3 {
+    min-width: max-content;
+}
+
+.submenu3 a {
+    display: none;
+}
+
+.menuitems3:hover .submenu3 a{
     display: block;
 }

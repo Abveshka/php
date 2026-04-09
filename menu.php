@@ -3,6 +3,13 @@ $menuItems = [
         'a', 'b', 'c', 'd'
 ];
 
+$menuItems3 = [
+        "News" => ["hobby", "photography"],
+        "About" => ["about", "nothing"],
+        "Contact" => ["contact", "notcontact"],
+        "Ayes" => "baby",
+];
+
 $menu2 = '
 <nav class="menu2">
     <div><a><span>Главная</span></a></div>
@@ -24,4 +31,24 @@ $menu2 = '
     <?php endforeach; ?>
 </div>
     <h2>Второе меню (статическое)</h2>
-<?= $menu2 ?>
+        <?= $menu2 ?>
+    <h2>Третье меню (циклом)</h2>
+<div class="menu3">
+
+    <?php foreach ($menuItems3 as $item => $keys):?>
+    <div class="menuitems3">
+        <span><?= htmlspecialchars($item) ?></span>
+        <?php if (is_array($keys)): ?>
+        <div class="submenu3">
+            <?php foreach ($keys as $itemsmall):?>
+                <a><?= htmlspecialchars($itemsmall) ?></a>
+            <?php endforeach; ?>
+        </div>
+        <?php else: ?>
+            <div class="subsubmenu3">
+            <a><?= htmlspecialchars($keys) ?></a>
+            </div>
+        <?php endif; ?>
+    </div>
+    <?php endforeach; ?>
+</div>
